@@ -1,15 +1,26 @@
-import React from 'react'
+'use client';
+
 import Navbar from '../Navbar'
 import Navbar2 from '../Navbar2'
+import { usePathname } from "next/navigation";
 
-const index = ( { children }: { children: React.ReactNode}) => {
+const Index = ( { children }: { children: React.ReactNode} ) => {
+  const pathname = usePathname()
+  const withOutNav = ['/admin','/login','register']
+
   return (
     <>
-      <Navbar/>      
-      <Navbar2/>      
+      {
+        !withOutNav.includes(pathname) && (
+          <>
+            <Navbar/>      
+            <Navbar2/>      
+          </>
+        )
+      }
       { children }
     </>
   )
 }
 
-export default index
+export default Index
