@@ -1,12 +1,13 @@
 "use client";
+
 import "../../app/globals.css";
 import "./data-tables-css.css";
 import "./satoshi.css";
 import { useState, useEffect } from "react";
 import Loader from "@/components/common/Loader";
 
-import Sidebar from "@/components/Sidebar";
-import Header from "@/components/Header";
+import Sidebar from "@/components/layouts/Sidebar";
+import Header from "@/components/layouts/Header";
 
 export default function RootLayout({
   children,
@@ -22,7 +23,7 @@ export default function RootLayout({
   }, []);
 
   return (
-    <html lang="en">
+    <>
       <body suppressHydrationWarning={true}>
         <div className="dark:bg-boxdark-2 dark:text-bodydark">
           {loading ? (
@@ -58,6 +59,6 @@ export default function RootLayout({
           )}
         </div>
       </body>
-    </html>
+    </>
   );
 }
