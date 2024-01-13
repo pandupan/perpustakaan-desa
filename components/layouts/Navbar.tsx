@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { IoSearchOutline } from "react-icons/io5";
 import { FaRegBookmark } from "react-icons/fa";
+import { FaRegUser } from "react-icons/fa";
+
 import Image from "next/image";
 import {
   Popover,
@@ -24,10 +26,27 @@ const Navbar = () => {
     <>
       <div className="flex flex-col bg-[#ffff] w-full h-max-[200px] py-2">
         <div className="p-2 flex flex-row border-b px-20">
-          <div className="my-auto">logo</div>
+          <div className="my-auto flex-row flex gap-4">
+            <div className="relative  w-[50px] h-[50px]">
+              <Image
+              src="/images/logo/logo.png"
+              alt="logo"
+              fill={true}
+              className="object-cover w-[50px] h-[50px]"
+              />  
+            </div>
+            <div className="flex flex-col">
+              <h1 className="font-black text-xl text-[#1a1668]">
+                Perpustakaan Desa
+              </h1>
+              <h3 className="">
+                Website Perpustakaan
+              </h3>
+            </div>
+          </div>
           <div className="flex mx-auto my-auto">
             <div className="flex flex-row border-0 rounded-md bg-[#f5f5f5]">
-              <div className="my-auto border-r-1 border">
+              <div className="my-auto border-r border-[#a8a8a8]-2">
                 <Select>
                   <SelectTrigger className="w-[150px]">
                     <SelectValue placeholder="Kategori" />
@@ -50,21 +69,44 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex flex-row gap-4">
-            <div className="my-auto">
-              <FaRegBookmark size={25} />
-            </div>
             <Popover>
               <PopoverTrigger>
                 <div className="flex flex-row my-auto gap-4">
                   <div className="bg-[#5a6c76] w-[50px] h-[50px] rounded-xl my-auto"></div>
                   <div className="flex flex-col gap-1.5 text-start">
-                    <h1 className="text-lg font-bold">UserName</h1>
+                    <h1 className="text-lg font-bold text-[#1a1668]">UserName</h1>
                     <h3 className="text-sm">useremail@gmail.com</h3>
                   </div>
                 </div>
               </PopoverTrigger>
               <PopoverContent>
-                Place content for the popover here.
+                <div className="flex flex-col">
+                  <div className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full pb-2 border-[#e9ecef]">
+                    <h1 className="text-lg font-bold text-[#1a1668]">UserName</h1>
+                    <h3 className="text-normal text-[#999ea3]">user@gmail.com</h3>
+                  </div>
+                  <Link href="/Profile" className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300">
+                    <div className="flex flex-row ">
+                      <div className="mx-2 my-auto text-[#5488c4]">
+                        <FaRegUser size={15}/>
+                      </div>
+                    <h1 className="text-normal font-normal">Profile</h1>
+                    </div>
+                  </Link>
+                  <Link href="/Wishlist" className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300">
+                    <div className="flex flex-row ">
+                      <div className="mx-2 my-auto text-[#5488c4]">
+                        <FaRegBookmark size={15}/>
+                      </div>
+                    <h1 className="text-normal">Penanda Buku</h1>
+                    </div>
+                  </Link>
+                  <div className="py-4 w-full">
+                    <button title="logout" className="py-3 text-center bg-[#5488c4] text-white w-full rounded-xl font-bold hover:bg-[#3e6491] ease-in-out duration-300">
+                      Logout
+                    </button>
+                  </div>
+                </div>
               </PopoverContent>
             </Popover>
           </div>
