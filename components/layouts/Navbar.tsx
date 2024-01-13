@@ -69,7 +69,14 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex flex-row gap-4">
-            <Popover>
+            {/* KONDISI BELUM LOGIN */}
+            <div className='my-auto ml-auto'>
+              <Link href="/login" title="Login" className="py-4 px-8 text-center bg-[#54c47b] text-white w-full rounded-md font-bold hover:bg-[#3e915a] ease-in-out duration-300">
+                Masuk
+              </Link>
+            </div>
+            {/* KONDISI UDAH LOGIN */}
+            {/* <Popover>
               <PopoverTrigger>
                 <div className="flex flex-row my-auto gap-4">
                   <div className="bg-[#5a6c76] w-[50px] h-[50px] rounded-xl my-auto"></div>
@@ -108,7 +115,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </PopoverContent>
-            </Popover>
+            </Popover> */}
           </div>
         </div>
       </div>
