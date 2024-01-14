@@ -117,6 +117,32 @@ const CarouselBuku = () => {
               </div>
             </div>
           </SwiperSlide>
+          <SwiperSlide>
+            <div className="md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] w-[100px] h-[100px] flex items-center justify-center">
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="relative max-w-[157px] max-h-[207px] bg-body">
+                  <div className="w-[157px] h-[207px]"></div>
+                </div>
+                <div className="flex flex-col w-[157px] mt-2">
+                  <h3 className="text-sm">Genre 1, Genre 2, Ge</h3>
+                  <h1 className="font-semibold">Judul Buku</h1>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="md:w-[300px] md:h-[300px] lg:w-[400px] lg:h-[400px] w-[100px] h-[100px] flex items-center justify-center">
+              <div className="bg-white p-4 rounded-lg shadow-md">
+                <div className="relative max-w-[157px] max-h-[207px] bg-body">
+                  <div className="w-[157px] h-[207px]"></div>
+                </div>
+                <div className="flex flex-col w-[157px] mt-2">
+                  <h3 className="text-sm">Genre 1, Genre 2, Ge</h3>
+                  <h1 className="font-semibold">Judul Buku</h1>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
         </Swiper>
       </div>
     </div>
