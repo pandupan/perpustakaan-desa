@@ -1,4 +1,4 @@
-import ListBuku from '@/components/pages/DaftarBuku/daftarbuku'
+import ListBuku from '@/components/pages/Buku/daftarbuku'
 import React from 'react'
 
 const page = () => {
