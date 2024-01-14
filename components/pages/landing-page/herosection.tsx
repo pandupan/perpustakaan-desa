@@ -142,10 +142,10 @@ const Hero = () => {
               </div>
             </div>
             <div className='hidden w-full h-full absolute md:flex justify-between items-center z-[19]'>
-              <button onClick={slidePrev} className="flex justify-center items-center w-[50px] h-[110px] bg-transparent hover:bg-colorfull-lightblue text-white border-[1px] border-white m-2 ml-4 p-1">
+              <button onClick={slidePrev} title='left' className="flex justify-center items-center w-[50px] h-[110px] bg-transparent hover:bg-colorfull-lightblue text-white border-[1px] border-white m-2 ml-4 p-1">
                 <BsArrowLeft size={15}/>
               </button>
-              <button onClick={slideNext} className="flex justify-center items-center w-[50px] h-[110px] bg-transparent hover:bg-colorfull-lightblue text-white border-[1px] border-white m-2 mr-4 p-1">
+              <button onClick={slideNext} title='right' className="flex justify-center items-center w-[50px] h-[110px] bg-transparent hover:bg-colorfull-lightblue text-white border-[1px] border-white m-2 mr-4 p-1">
                 <BsArrowRight size={15}/>
               </button>
             </div>

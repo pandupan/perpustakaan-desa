@@ -25,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <div className="flex flex-col bg-[#ffff] w-full h-max-[200px] py-2">
-        <div className="p-2 flex flex-row border-b px-20">
+        <div className="p-2 flex flex-row border-b px-10">
           <div className="my-auto flex-row flex gap-4">
             <div className="relative  w-[50px] h-[50px]">
               <Image

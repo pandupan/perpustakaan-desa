@@ -18,7 +18,7 @@ const Navbar2 = () => {
   return (
     <>
     <div className='flex flex-col bg-[#ffff] w-full h-max-[200px]'>
-      <div className='gap-4 flex flex-row text-[#1a1668] px-20 py-4'>
+      <div className='gap-4 flex flex-row text-[#1a1668] px-10 py-4'>
         <Link href='/' className=' font-bold rounded-xl p-2 hover:text-[#5488c4]'>
           Home
         </Link>
