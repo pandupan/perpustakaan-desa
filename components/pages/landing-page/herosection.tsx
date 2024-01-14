@@ -48,7 +48,7 @@ const Hero = () => {
   
 
   return (
-    <div className="relative flex justify-center items-center w-full h-[450px] sm:h-[350px] z-[1]">
+    <div className="relative flex justify-center items-center w-full h-[450px] sm:h-[450px] z-[1]">
       <Swiper
         modules={[Pagination, Autoplay]}
         spaceBetween={10}

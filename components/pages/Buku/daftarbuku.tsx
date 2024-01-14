@@ -1,11 +1,13 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
 import { Checkbox } from "@/components/ui/checkbox";
 
 const ListBuku = () => {
@@ -394,14 +396,17 @@ const ListBuku = () => {
       <div className="flex flex-col gap-4 w-full">
         <h1 className="text-[#1a1668] text-3xl font-bold">Buku</h1>
         {/* LIST BUKU */}
-        <div className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6">
+        <Link
+          href="/daftar-buku/detailbuku"
+          className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6"
+        >
           <div>
-            <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md">
-              
-            </div>
+            <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md"></div>
           </div>
           <div className="flex flex-col py-4">
-            <h3 className="text-[#5488c4] font-semibold">Genre 0, Genre 1, Genre 3</h3>
+            <h3 className="text-[#5488c4] font-semibold">
+              Genre 0, Genre 1, Genre 3
+            </h3>
             <h1 className="text-3xl font-bold">Judul Buku</h1>
             <p className="mt-4">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae
@@ -409,33 +414,53 @@ const ListBuku = () => {
               distinctio maiores sit debitis veritatis quam molestias voluptate
               voluptatem. Minima molestias quae hic.
             </p>
-            <div className="ml-auto">
-              <div className="py-4 px-4 max-w-[200px] text-center bg-[#5488c4] text-white rounded-md font-bold">
+            <div className="ml-auto mt-auto">
+              <div className="py-2 px-4 max-w-[200px] text-center bg-[#5488c4] text-white rounded-md font-bold">
+                Tersedia
+              </div>
+            </div>
+          </div>
+        </Link>
+        <div className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6">
+          <div>
+            <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md"></div>
+          </div>
+          <div className="flex flex-col py-4">
+            <h3 className="text-[#5488c4] font-semibold">
+              Genre 0, Genre 1, Genre 3
+            </h3>
+            <h1 className="text-3xl font-bold">Judul Buku</h1>
+            <p className="mt-4">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae
+              non praesentium nemo totam! Corrupti praesentium, officiis
+              distinctio maiores sit debitis veritatis quam molestias voluptate
+              voluptatem. Minima molestias quae hic.
+            </p>
+            <div className="ml-auto mt-auto">
+              <div className="py-2 px-4 max-w-[200px] text-center bg-[#5488c4] text-white rounded-md font-bold">
                 Tersedia
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6">
-          <div>
-            <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md">
-              
-            </div>
-          </div>
-          <div className="flex flex-col py-4">
-            <h3 className="text-[#5488c4] font-semibold">Genre 0, Genre 1, Genre 3</h3>
-            <h1 className="text-3xl font-bold">Judul Buku</h1>
-            <p className="mt-4">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel vitae
-              non praesentium nemo totam! Corrupti praesentium, officiis
-              distinctio maiores sit debitis veritatis quam molestias voluptate
-              voluptatem. Minima molestias quae hic.
-            </p>
-            <div className="ml-auto">
-              <div className="py-4 px-4 max-w-[200px] text-center bg-[#5488c4] text-white rounded-md font-bold">
-                Tersedia
-              </div>
-            </div>
+        <div className="flex flex-row pb-4">
+          <h3 className="my-auto font-medium">Menampilkan 2 dari 10 data</h3>
+          <div className="ml-auto flex flex-row gap-2">
+            <Link href="#" className="py-4 px-4 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+              Sebelumnya
+            </Link>
+            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#5488c4] text-white rounded-md font-bold">
+              1
+            </Link>
+            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+              2
+            </Link>
+            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+              3
+            </Link>
+            <Link href="#" className="py-4 px-6 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+              Selanjutnya
+            </Link>
           </div>
         </div>
       </div>

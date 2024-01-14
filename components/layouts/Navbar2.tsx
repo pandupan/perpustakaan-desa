@@ -25,7 +25,7 @@ const Navbar2 = () => {
         <Link href='/daftar-buku' className=' font-bold rounded-xl p-2 hover:text-[#5488c4]'>
           Daftar Buku
         </Link>
-        <Link href='/profile' className=' font-bold rounded-xl p-2 hover:text-[#5488c4]'>
+        <Link href='/tentang-kami' className=' font-bold rounded-xl p-2 hover:text-[#5488c4]'>
           Tentang Kami
         </Link>
         <div className='my-auto ml-auto'>
