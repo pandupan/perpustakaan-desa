@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const CarouselBuku = () => {
   return (
-    <div className="container px-20 flex flex-col w-full bg-white py-4">
+    <div className="container px-20 flex flex-col w-full  py-4">
       <div className="flex flex-row mt-10">
         <h1 className="text-4xl font-bold text-[#1a1668]">
           Rekomendasi Untukmu
@@ -20,7 +20,7 @@ const CarouselBuku = () => {
           Lihat Selengkapnya
         </Link>
       </div>
-      <div className="flex flex-row lg:gap-20 gap-8 justify-center items-center w-full ">
+      <div className="flex flex-row lg:gap-20 gap-8 justify-center items-center w-full bg-white rounded-xl shadow-lg px-20 mt-4">
         <Swiper
           navigation
           pagination={{ type: "fraction" }}

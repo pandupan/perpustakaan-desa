@@ -1,5 +1,6 @@
 'use client';
 
+import Footer from '../Footer';
 import Navbar from '../Navbar'
 import Navbar2 from '../Navbar2'
 import { usePathname } from "next/navigation";
@@ -19,6 +20,13 @@ const Index = ( { children }: { children: React.ReactNode} ) => {
         )
       }
       { children }
+      {
+        !withOutNav.includes(pathname) && (
+          <>
+            <Footer/>    
+          </>
+        )
+      }
     </>
   )
 }
