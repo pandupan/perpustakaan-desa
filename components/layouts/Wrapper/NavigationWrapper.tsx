@@ -3,13 +3,14 @@
 import Navbar from '../Navbar'
 import Navbar2 from '../Navbar2'
 import { usePathname } from "next/navigation";
+import { SessionProvider } from 'next-auth/react';
 
 const Index = ( { children }: { children: React.ReactNode} ) => {
   const pathname = usePathname()
-  const withOutNav = ['/admin','/login','register']
+  const withOutNav = ['/dashboard','/login','register']
 
   return (
-    <>
+    <SessionProvider>
       {
         !withOutNav.includes(pathname) && (
           <>
@@ -19,7 +20,7 @@ const Index = ( { children }: { children: React.ReactNode} ) => {
         )
       }
       { children }
-    </>
+    </SessionProvider>
   )
 }
 
