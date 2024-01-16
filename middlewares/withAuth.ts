@@ -9,6 +9,11 @@ export default function withAuth(middleware:NextMiddleware, requireAuth:string[]
         req,
         secret:process.env.NEXTAUTH_SECRET
       });
+      console.log('Token WithAuth =>', token)
+      if(!token){
+        const url = new URL('/login', req.url);
+        return NextResponse.redirect(url);
+      }
       if(!token){
         const url = new URL('/login', req.url);
         return NextResponse.redirect(url);

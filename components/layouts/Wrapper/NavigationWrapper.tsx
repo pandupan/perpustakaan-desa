@@ -1,16 +1,17 @@
 'use client';
 
-import Footer from '../Footer';
 import Navbar from '../Navbar'
 import Navbar2 from '../Navbar2'
 import { usePathname } from "next/navigation";
+import { SessionProvider } from 'next-auth/react';
+import Footer from '../Footer';
 
 const Index = ( { children }: { children: React.ReactNode} ) => {
   const pathname = usePathname()
-  const withOutNav = ['/admin','/login','register']
+  const withOutNav = ['/dashboard','/login','register']
 
   return (
-    <>
+    <SessionProvider>
       {
         !withOutNav.includes(pathname) && (
           <>
@@ -23,11 +24,11 @@ const Index = ( { children }: { children: React.ReactNode} ) => {
       {
         !withOutNav.includes(pathname) && (
           <>
-            <Footer/>    
+            <Footer/>
           </>
         )
       }
-    </>
+    </SessionProvider>
   )
 }
 

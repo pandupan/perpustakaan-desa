@@ -2,7 +2,7 @@ import React from "react";
 
 const TentangKami = () => {
   return (
-    <div className="w-full bg-white pt-30 pb-20">
+    <div className="w-full bg-white pt-30">
       <div className="bg-[#f5f5f5] w-full px-20 border">
       <div className="flex flex-row gap-10 container justify-center w-full">
         <div>

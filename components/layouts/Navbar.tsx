@@ -20,8 +20,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data }: any = useSession();
+
+  console.log(data);
   return (
     <>
       <div className="flex flex-col bg-[#ffff] w-full h-max-[200px] py-2">
@@ -70,52 +74,79 @@ const Navbar = () => {
           </div>
           <div className="flex flex-row gap-4">
             {/* KONDISI BELUM LOGIN */}
-            <div className='my-auto ml-auto'>
+            {/* <div className='my-auto ml-auto'>
               <Link href="/login" title="Login" className="py-4 px-8 text-center bg-[#54c47b] text-white w-full rounded-md font-bold hover:bg-[#3e915a] ease-in-out duration-300">
                 Masuk
               </Link>
-            </div>
+            </div> */}
             {/* KONDISI UDAH LOGIN */}
-            {/* <Popover>
-              <PopoverTrigger>
-                <div className="flex flex-row my-auto gap-4">
-                  <div className="bg-[#5a6c76] w-[50px] h-[50px] rounded-xl my-auto"></div>
-                  <div className="flex flex-col gap-1.5 text-start">
-                    <h1 className="text-lg font-bold text-[#1a1668]">UserName</h1>
-                    <h3 className="text-sm">useremail@gmail.com</h3>
-                  </div>
-                </div>
-              </PopoverTrigger>
-              <PopoverContent>
-                <div className="flex flex-col">
-                  <div className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full pb-2 border-[#e9ecef]">
-                    <h1 className="text-lg font-bold text-[#1a1668]">UserName</h1>
-                    <h3 className="text-normal text-[#999ea3]">user@gmail.com</h3>
-                  </div>
-                  <Link href="/Profile" className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300">
-                    <div className="flex flex-row ">
-                      <div className="mx-2 my-auto text-[#5488c4]">
-                        <FaRegUser size={15}/>
-                      </div>
-                    <h1 className="text-normal font-normal">Profile</h1>
+            {data !== null ? (
+              <Popover>
+                <PopoverTrigger>
+                  <div className="flex flex-row my-auto gap-4">
+                    <div className="bg-[#5a6c76] w-[50px] h-[50px] rounded-xl my-auto"></div>
+                    <div className="flex flex-col gap-1.5 text-start">
+                      <h1 className="text-lg font-bold text-[#1a1668]">
+                        UserName
+                      </h1>
+                      <h3 className="text-sm">useremail@gmail.com</h3>
                     </div>
-                  </Link>
-                  <Link href="/Wishlist" className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300">
-                    <div className="flex flex-row ">
-                      <div className="mx-2 my-auto text-[#5488c4]">
-                        <FaRegBookmark size={15}/>
-                      </div>
-                    <h1 className="text-normal">Penanda Buku</h1>
-                    </div>
-                  </Link>
-                  <div className="py-4 w-full">
-                    <button title="logout" className="py-3 text-center bg-[#5488c4] text-white w-full rounded-xl font-bold hover:bg-[#3e6491] ease-in-out duration-300">
-                      Logout
-                    </button>
                   </div>
-                </div>
-              </PopoverContent>
-            </Popover> */}
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="flex flex-col">
+                    <div className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full pb-2 border-[#e9ecef]">
+                      <h1 className="text-lg font-bold text-[#1a1668]">
+                        UserName
+                      </h1>
+                      <h3 className="text-normal text-[#999ea3]">
+                        user@gmail.com
+                      </h3>
+                    </div>
+                    <Link
+                      href="/Profile"
+                      className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300"
+                    >
+                      <div className="flex flex-row ">
+                        <div className="mx-2 my-auto text-[#5488c4]">
+                          <FaRegUser size={15} />
+                        </div>
+                        <h1 className="text-normal font-normal">Profile</h1>
+                      </div>
+                    </Link>
+                    <Link
+                      href="/Wishlist"
+                      className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300"
+                    >
+                      <div className="flex flex-row ">
+                        <div className="mx-2 my-auto text-[#5488c4]">
+                          <FaRegBookmark size={15} />
+                        </div>
+                        <h1 className="text-normal">Penanda Buku</h1>
+                      </div>
+                    </Link>
+                    <div className="py-4 w-full">
+                      <button
+                        title="logout"
+                        className="py-3 text-center bg-[#5488c4] text-white w-full rounded-xl font-bold hover:bg-[#3e6491] ease-in-out duration-300"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+            ) : (
+              <div className="my-auto ml-auto">
+                <Link
+                  href="/login"
+                  title="Login"
+                  className="py-4 px-8 text-center bg-[#54c47b] text-white w-full rounded-md font-bold hover:bg-[#3e915a] ease-in-out duration-300"
+                >
+                  Masuk
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

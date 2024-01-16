@@ -12,13 +12,13 @@ import { GrGooglePlus } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <div className=" sm:px-8 md:px-22 xl:px-10 relative overflow-hidden flex flex-col w-full h-[800px] bg-hero-news py-10">
+    <div className=" sm:px-8 md:px-22 xl:px-10 relative overflow-hidden flex flex-col w-full h-[800px] bg-hero-news py-10 bg-[#5488c4]">
       <div className="absolute container flex flex-col sm:py-12 py-4 md:px-0 xl:px-44 xl:container">
         <h3 className="text-white text-xs sm:text-sm font-semibold">
           Bergabunglah dengan
         </h3>
         <h1 className="text-white text-4xl sm:text-5xl font-bold">
-          Sehat Bersama
+          Perpustakaan Desa
         </h1>
 
         <div className="justify-end xl:flex hidden flex-row gap-8 xl:mr-0 sm:mr-16 sm:my-0 my-2">
@@ -41,7 +41,9 @@ const Footer = () => {
         </div>
 
         <p className="text-white sm:text-base text-xs sm:w-[450px]">
-          &quot;Sehat Bersama: Aplikasi Inovatif untuk Menginspirasi, Mempertahankan, dan Meningkatkan Kesehatan Anda, Satu Langkah Sehat Bersama Menuju Gaya Hidup Sejahtera dan Bahagia!&quot;
+          &quot;Sehat Bersama: Aplikasi Inovatif untuk Menginspirasi,
+          Mempertahankan, dan Meningkatkan Kesehatan Anda, Satu Langkah Sehat
+          Bersama Menuju Gaya Hidup Sejahtera dan Bahagia!&quot;
         </p>
         <div className="flex text-white flex-col sm:flex-row gap-4 sm:gap-12 xl:w-full sm:w-[500px] lg:w-[1000px] lg:gap-16 xl:gap-32 sm:mt-24 mt-8  ">
           <div className="flex flex-col gap-1 sm:gap-3 ">
@@ -49,7 +51,8 @@ const Footer = () => {
             <div className="flex flex-row gap-3 justify-start">
               <FaLocationPin size={17} />
               <p className="text-xs sm:text-base font-light w-[180px] ">
-              Puskesmas Kahuripan, Jl. Siliwangi, Blk No.31, Kahuripan, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat 46151
+                Puskesmas Kahuripan, Jl. Siliwangi, Blk No.31, Kahuripan, Kec.
+                Tawang, Kab. Tasikmalaya, Jawa Barat 46151
               </p>
             </div>
             <div className="flex flex-row gap-3 items-center justify-start">
@@ -69,14 +72,23 @@ const Footer = () => {
               <a href="/" className="text-xs sm:text-base font-light">
                 Home
               </a>
-              <a href="/InformasiKesehatan" className="text-xs sm:text-base font-light">
-                Artikel
+              <a
+                href="/daftar-buku"
+                className="text-xs sm:text-base font-light"
+              >
+                Daftar Buku
               </a>
-              <a href="/KalkulatorKesehatan" className="text-xs sm:text-base font-light">
-                Kalkulator Kesehatan
+              <a
+                href="/tentang-kami"
+                className="text-xs sm:text-base font-light"
+              >
+                Tentang Kami
               </a>
-              <a href="/ForumKomunitas" className="text-xs sm:text-base font-light">
-                Layanan Diskusi
+              <a
+                href="/profile"
+                className="text-xs sm:text-base font-light"
+              >
+                Profile
               </a>
             </div>
           </div>
@@ -92,7 +104,9 @@ const Footer = () => {
             </div>
           </div> */}
           <div className="flex flex-col  xl:w-[149px]">
-            <h1 className="text-sm sm:text-2xl font-bold">Ikuti Perjalanan Kami</h1>
+            <h1 className="text-sm sm:text-2xl font-bold">
+              Ikuti Perjalanan Kami
+            </h1>
             <div className="flex flex-row gap-3 items-center mt-4">
               <a href=" ">
                 <FaFacebookF size={15} />
@@ -121,12 +135,14 @@ const Footer = () => {
             Aturan & Kebijakan Penggunaan
           </h1>
           <p className="xl:w-[804px] sm:w-[600px] text-xs sm:text-sm xl:text-base text-white font-light">
-            Dengan mengakses aplikasi sehat bersama anda patuh dengan aturan yang berkaitan privasi keamanan data sesuai dengan kebijakan yang berlaku.
+            Dengan mengakses aplikasi sehat bersama anda patuh dengan aturan
+            yang berkaitan privasi keamanan data sesuai dengan kebijakan yang
+            berlaku.
           </p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
