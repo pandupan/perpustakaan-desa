@@ -4,6 +4,8 @@ import bcrypt from "bcrypt"
 
 const firestore = getFirestore(app)
 
+// Autentikasi => Service
+
 export async function signUp(userData: {
     email : string, 
     fullname:string, 
@@ -53,3 +55,9 @@ export async function signIn(userData : {email : string}){
     return null;
   }
 }
+
+
+
+// Read => Service
+
+

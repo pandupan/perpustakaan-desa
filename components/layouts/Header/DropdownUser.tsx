@@ -4,7 +4,7 @@ import Image from "next/image";
 import { signOut,  useSession } from "next-auth/react";
 
 const DropdownUser = () => {
-  const {data}: any = useSession()
+  const { data }: any = useSession()
 
   console.log(data)
   const [dropdownOpen, setDropdownOpen] = useState(false);

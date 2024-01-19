@@ -8,7 +8,7 @@ import Footer from '../Footer';
 
 const Index = ( { children }: { children: React.ReactNode} ) => {
   const pathname = usePathname()
-  const withOutNav = ['/dashboard','/login','register']
+  const withOutNav = ['/dashboard','/login','/register','/dashboard/create','/dashboard/profile']
 
   return (
     <SessionProvider>
@@ -20,7 +20,7 @@ const Index = ( { children }: { children: React.ReactNode} ) => {
           </>
         )
       }
-      { children }
+        { children }
       {
         !withOutNav.includes(pathname) && (
           <>

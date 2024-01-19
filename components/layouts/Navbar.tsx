@@ -20,7 +20,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const { data }: any = useSession();
@@ -73,13 +73,6 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex flex-row gap-4">
-            {/* KONDISI BELUM LOGIN */}
-            {/* <div className='my-auto ml-auto'>
-              <Link href="/login" title="Login" className="py-4 px-8 text-center bg-[#54c47b] text-white w-full rounded-md font-bold hover:bg-[#3e915a] ease-in-out duration-300">
-                Masuk
-              </Link>
-            </div> */}
-            {/* KONDISI UDAH LOGIN */}
             {data !== null ? (
               <Popover>
                 <PopoverTrigger>
@@ -87,9 +80,9 @@ const Navbar = () => {
                     <div className="bg-[#5a6c76] w-[50px] h-[50px] rounded-xl my-auto"></div>
                     <div className="flex flex-col gap-1.5 text-start">
                       <h1 className="text-lg font-bold text-[#1a1668]">
-                        UserName
+                      {data && data.user.fullname}
                       </h1>
-                      <h3 className="text-sm">useremail@gmail.com</h3>
+                      <h3 className="text-sm">{data && data.user.email}</h3>
                     </div>
                   </div>
                 </PopoverTrigger>
@@ -97,10 +90,10 @@ const Navbar = () => {
                   <div className="flex flex-col">
                     <div className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full pb-2 border-[#e9ecef]">
                       <h1 className="text-lg font-bold text-[#1a1668]">
-                        UserName
+                      {data && data.user.fullname}
                       </h1>
                       <h3 className="text-normal text-[#999ea3]">
-                        user@gmail.com
+                      {data && data.user.email}
                       </h3>
                     </div>
                     <Link
@@ -127,6 +120,7 @@ const Navbar = () => {
                     </Link>
                     <div className="py-4 w-full">
                       <button
+                        onClick={() => signOut()}
                         title="logout"
                         className="py-3 text-center bg-[#5488c4] text-white w-full rounded-xl font-bold hover:bg-[#3e6491] ease-in-out duration-300"
                       >
