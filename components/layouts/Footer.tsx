@@ -41,9 +41,10 @@ const Footer = () => {
         </div>
 
         <p className="text-white sm:text-base text-xs sm:w-[450px]">
-          &quot;Sehat Bersama: Aplikasi Inovatif untuk Menginspirasi,
-          Mempertahankan, dan Meningkatkan Kesehatan Anda, Satu Langkah Sehat
-          Bersama Menuju Gaya Hidup Sejahtera dan Bahagia!&quot;
+          &quot;Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          Aliquid nesciunt, corrupti excepturi eos facilis fugiat iusto
+          voluptate facere quod expedita ab mollitia, sed aut eaque, deleniti
+          autem. Ab, veritatis ullam.&quot;
         </p>
         <div className="flex text-white flex-col sm:flex-row gap-4 sm:gap-12 xl:w-full sm:w-[500px] lg:w-[1000px] lg:gap-16 xl:gap-32 sm:mt-24 mt-8  ">
           <div className="flex flex-col gap-1 sm:gap-3 ">
@@ -51,18 +52,18 @@ const Footer = () => {
             <div className="flex flex-row gap-3 justify-start">
               <FaLocationPin size={17} />
               <p className="text-xs sm:text-base font-light w-[180px] ">
-                Puskesmas Kahuripan, Jl. Siliwangi, Blk No.31, Kahuripan, Kec.
-                Tawang, Kab. Tasikmalaya, Jawa Barat 46151
+                XXXXXXXX, Jl. XXXXX, Blk No.XX, XXXX, Kec.
+                XXXX, Kab. XXXXXXX, Jawa Barat 4XXX1
               </p>
             </div>
             <div className="flex flex-row gap-3 items-center justify-start">
               <FaPhoneAlt size={12} />
-              <p className="text-xs sm:text-base font-light">(0265) 321323</p>
+              <p className="text-xs sm:text-base font-light">(0XX) 3XXX</p>
             </div>
             <div className="flex flex-row gap-3">
               <GrMail size={17} />
               <p className="text-xs sm:text-base font-light">
-                pkmdtpkhuripan@gmail.com
+                perpustakaan@gmail.com
               </p>
             </div>
           </div>
@@ -84,10 +85,7 @@ const Footer = () => {
               >
                 Tentang Kami
               </a>
-              <a
-                href="/profile"
-                className="text-xs sm:text-base font-light"
-              >
+              <a href="/profile" className="text-xs sm:text-base font-light">
                 Profile
               </a>
             </div>
