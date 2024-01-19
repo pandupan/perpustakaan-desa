@@ -12,8 +12,8 @@ import { GrGooglePlus } from "react-icons/gr";
 
 const Footer = () => {
   return (
-    <div className=" sm:px-8 md:px-22 xl:px-10 relative overflow-hidden flex flex-col w-full h-[800px] bg-hero-news py-10 bg-[#5488c4]">
-      <div className="absolute container flex flex-col sm:py-12 py-4 md:px-0 xl:px-44 xl:container">
+    <div className=" sm:px-8 md:px-22 xl:px-10 relative overflow-hidden justify-center items-center flex flex-col w-full h-[800px] bg-hero-news py-10 mt-10 bg-[#5488c4]">
+      <div className="absolute container flex flex-col sm:py-12 py-4 md:px-0 xl:container lg:px-20">
         <h3 className="text-white text-xs sm:text-sm font-semibold">
           Bergabunglah dengan
         </h3>
