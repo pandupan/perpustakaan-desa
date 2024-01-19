@@ -118,7 +118,7 @@ const Navbar = () => {
                       </div>
                     </Link>
                     <Link
-                      href="/Wishlist"
+                      href="/profile"
                       className="flex flex-col gap-1.5 text-start border-dotted border-b-2 w-full py-2 border-[#e9ecef] hover:bg-[#f5f5f5] ease-in-out duration-300"
                     >
                       <div className="flex flex-row ">

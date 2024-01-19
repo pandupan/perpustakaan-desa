@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const AboutUs = () => {
   return (
@@ -17,9 +18,11 @@ const AboutUs = () => {
             aliquip ex ea commodo consequat. Duis aute irure dolor in
             reprehenderit in voluptate velit esse cillum dolore eu.
           </p>
-          <button className="bg-[#5488c4] w-[154px] h-[43px] rounded-xl">
-            <a className="place-self-center text-white">Baca Selengkapnya</a>
-          </button>
+          <div>
+          <Link href="tentang-kami" className="bg-[#5488c4] px-2 py-3.5 text-white rounded-xl">
+            Baca Selengkapnya
+          </Link> 
+          </div>
         </div>
         <div>
         <div className="relative border-4 border-[#1a1668] w-[250px] h-[230px] sm:w-[395px] sm:h-[377px] xl:w-[595px] xl:h-[477px]  z-[1]">

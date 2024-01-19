@@ -7,14 +7,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 
 import { Checkbox } from "@/components/ui/checkbox";
 
 const ListBuku = () => {
   return (
-    <div className="flex flex-row container gap-12 mt-10 px-10">
+    <div className="flex lg:flex-row flex-col lg:container gap-12 mt-10 lg:px-10 px-4">
       <div className="flex flex-col gap-4">
         <h1 className="text-[#1a1668] text-3xl font-bold">Opsi Filter</h1>
+        <div className="flex lg:flex-col gap-4 sm:flex-row flex-col">
         <Accordion type="single" collapsible>
           <AccordionItem value="item-1">
             <AccordionTrigger className="bg-[#ffffff] rounded-md border p-4 text-[#1a1668] text-lg">
@@ -385,6 +388,7 @@ const ListBuku = () => {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+        </div>
         <button
           title="Reset"
           className="py-4 px-8 text-center bg-[#5488c4] text-white w-full rounded-md font-bold hover:bg-[#3e6491] ease-in-out duration-300"
@@ -398,7 +402,7 @@ const ListBuku = () => {
         {/* LIST BUKU */}
         <Link
           href="/daftar-buku/detailbuku"
-          className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6"
+          className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex lg:flex-row flex-col gap-6"
         >
           <div>
             <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md"></div>
@@ -421,7 +425,7 @@ const ListBuku = () => {
             </div>
           </div>
         </Link>
-        <div className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex flex-row gap-6">
+        <div className="bg-[#ffffff] rounded-md border p-6 text-[#1a1668] text-lg flex lg:flex-row flex-col gap-6">
           <div>
             <div className="bg-[#cccccc] w-[210px] h-[307px] rounded-md"></div>
           </div>
@@ -443,23 +447,38 @@ const ListBuku = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-row pb-4">
+        <div className="flex lg:flex-row flex-col pb-4">
           <h3 className="my-auto font-medium">Menampilkan 2 dari 10 data</h3>
-          <div className="ml-auto flex flex-row gap-2">
-            <Link href="#" className="py-4 px-4 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
-              Sebelumnya
+          <div className="lg:ml-auto mx-auto lg:mx-0 flex flex-row gap-2">
+            <Link
+              href="#"
+              className="my-auto lg:py-4 lg:px-6 py-2 px-3 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold"
+            >
+              <FaArrowLeft size={20} />
             </Link>
-            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#5488c4] text-white rounded-md font-bold">
+            <Link
+              href="#"
+              className="lg:py-4 lg:px-6 py-2 px-3 max-w-[70px] text-center bg-[#5488c4] text-white rounded-md font-bold"
+            >
               1
             </Link>
-            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+            <Link
+              href="#"
+              className="lg:py-4 lg:px-6 py-2 px-3 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold"
+            >
               2
             </Link>
-            <Link href="#" className="py-4 px-6 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
+            <Link
+              href="#"
+              className="lg:py-4 lg:px-6 py-2 px-3 max-w-[70px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold"
+            >
               3
             </Link>
-            <Link href="#" className="py-4 px-6 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold">
-              Selanjutnya
+            <Link
+              href="#"
+              className="my-auto lg:py-4 lg:px-6 py-2 px-3 max-w-[200px] text-center bg-[#f5f5f5] text-[#5488c4] hover:bg-[#5488c4] hover:text-[#f5f5f5] ease-in-out duration-300 rounded-md font-bold"
+            >
+               <FaArrowRight size={20} />
             </Link>
           </div>
         </div>
