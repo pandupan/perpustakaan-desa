@@ -1,8 +1,45 @@
-import React from "react";
+'use client';
 
-const InputBuku = () => {
+import React, { useState } from "react";
+import { createBook, updateBook } from "@/lib/firebase/service";
+
+const InputBuku = ({ bookId }: { bookId?: string }) => {
+  const [bookData, setBookData] = useState({
+    title: "",
+    author: "",
+    category: "",
+    publisher: "",
+    publicationYear: "",
+    description: "",
+    stock: 0,
+    status: "",
+  });
+
+  const handleInputChange = (e: any) => {
+    setBookData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+  
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Book Data:", bookData); // Add this line
+    if (bookId) {
+      // Update book
+      const result = await updateBook(bookId, bookData);
+      console.log(result); // Handle the result as needed
+    } else {
+      // Create book
+      const result = await createBook(bookData);
+      console.log(result); // Handle the result as needed
+    }
+  };
+  
+  
+
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">
@@ -26,8 +63,11 @@ const InputBuku = () => {
                 Penulis
               </label>
               <input
+                name="author"
                 type="text"
                 placeholder="Masukan nama penulis"
+                value={bookData.author}
+                onChange={handleInputChange}
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               />
             </div>
@@ -36,8 +76,11 @@ const InputBuku = () => {
                 Kategori
               </label>
               <input
+                name="category"
                 type="text"
                 placeholder="Masukan kategori"
+                value={bookData.category}
+                onChange={handleInputChange}
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               />
             </div>
@@ -48,8 +91,11 @@ const InputBuku = () => {
                 Judul buku
               </label>
               <input
+                name="title"
                 type="text"
                 placeholder="Masukan judul buku"
+                value={bookData.title}
+                onChange={handleInputChange}
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               />
             </div>
@@ -58,8 +104,11 @@ const InputBuku = () => {
                 Penerbit
               </label>
               <input
+                name="publisher"
                 type="text"
                 placeholder="Masukan penerbit"
+                value={bookData.publisher}
+                onChange={handleInputChange}
                 className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
               />
             </div>
@@ -69,8 +118,11 @@ const InputBuku = () => {
               </label>
               <div className="relative">
                 <input
+                  name="publicationYear"
                   title="tahunterbit"
                   type="date"
+                  value={bookData.publicationYear}
+                  onChange={handleInputChange}
                   className="custom-input-date custom-input-date-2 w-full rounded border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                 />
               </div>
@@ -81,8 +133,11 @@ const InputBuku = () => {
               Deskripsi buku
             </label>
             <textarea
+              name="description"
               rows={6}
               placeholder="Masukan deskripsi buku"
+              value={bookData.description}
+              onChange={handleInputChange}
               className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
             ></textarea>
           </div>
@@ -91,8 +146,11 @@ const InputBuku = () => {
               Stock
             </label>
             <input
+              name="stock"
               type="text"
               placeholder="Masukan stock buku"
+              value={bookData.stock}
+              onChange={handleInputChange}
               className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
             />
           </div>
@@ -101,8 +159,11 @@ const InputBuku = () => {
               Status
             </label>
             <input
+              name="status"
               type="text"
               placeholder="Tersedia||Tidak Tersedia"
+              value={bookData.status}
+              onChange={handleInputChange}
               className="w-full rounded-lg border-[1.5px] border-stroke bg-transparent py-3 px-5 font-medium outline-none transition focus:border-primary active:border-primary disabled:cursor-default disabled:bg-whiter dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
             />
           </div>
@@ -110,13 +171,14 @@ const InputBuku = () => {
         <div className="my-auto ml-auto">
           <button
             title="Submit-buku"
+            type='submit'
             className="py-4 px-8 text-center bg-[#54c47b] text-white w-full rounded-md font-bold hover:bg-[#3e915a] ease-in-out duration-300"
           >
             Submit
           </button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

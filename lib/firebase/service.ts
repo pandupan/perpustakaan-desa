@@ -1,6 +1,7 @@
-import { collection, doc, getDocs, getDoc, getFirestore, query, where, addDoc } from "firebase/firestore";
+import { collection, doc, getDocs, getDoc, getFirestore, query, where, addDoc, updateDoc } from "firebase/firestore";
 import app from "./init"
-import bcrypt from "bcrypt"
+import bcrypt from 'bcryptjs' 
+
 
 const firestore = getFirestore(app)
 
@@ -56,8 +57,58 @@ export async function signIn(userData : {email : string}){
   }
 }
 
-
-
 // Read => Service
 
+export async function retreiveData(collectionName: string) {
+  const snapshot = await getDocs(collection(firestore, collectionName))
 
+  const data = snapshot.docs.map((doc)=>({
+      id: doc.id,
+      ...doc.data(),
+  }));
+  return data
+}
+
+export async function retreiveDataById(collectionName: string, id: string) {
+  const snapshot = await getDoc(doc(firestore, collectionName, id))
+  const data = snapshot.data()
+  return data;
+  
+}
+
+export async function createBook(bookData: {
+  title: string,
+  author: string,
+  category: string,
+  publisher: string,
+  publicationYear: string,
+  description: string,
+  stock: number,
+  status: string,
+}) {
+  try {
+    const bookRef = await addDoc(collection(firestore, "books"), bookData);
+    return { status: true, message: "Book created successfully", bookId: bookRef.id };
+  } catch (error : any) {
+    return { status: false, message: error.message, statusCode: 400 };
+  }
+}
+
+export async function updateBook(bookId: string, updatedData: {
+  title?: string,
+  author?: string,
+  category?: string,
+  publisher?: string,
+  publicationYear?: string,
+  description?: string,
+  stock?: number,
+  status?: string,
+}) {
+  try {
+    const bookRef = doc(firestore, "books", bookId);
+    await updateDoc(bookRef, updatedData);
+    return { status: true, message: "Book updated successfully" };
+  } catch (error : any) {
+    return { status: false, message: error.message, statusCode: 400 };
+  }
+}
