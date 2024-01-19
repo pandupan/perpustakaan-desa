@@ -14,16 +14,16 @@ const imageSlider = [
   {
     id:1,
     imageUrl:'https://i.ibb.co/tZnQVj1/slide-hero1.jpg',
-    section:'RECRUITMENT', 
-    subsection:'All Talent Found',
-    link:'/recruitment'
+    section:'Perpustakaan Desa', 
+    subsection:'Website Perpustakaan',
+    link:'/daftar-buku'
   },
   {
     id:2,
-    imageUrl:'https://i.ibb.co/8sPRSb1/slide-hero2.jpg',
-    section:'JOB COUNSELING',
-    subsection:'All Talent Conected',
-    link:'/counseling'
+    imageUrl:'https://i.ibb.co/xhw7tpY/slidehero2.png',
+    section:'Cari Bukumu!',
+    subsection:'Mencari buku menjadi lebih mudah!',
+    link:'/daftar-buku'
   }
 ]
 const Hero = () => {
@@ -120,7 +120,7 @@ const Hero = () => {
                   </motion.h1>
                   <Link href={item.link}>
                     <motion.button 
-                      className='mt-10 md:ml-24 text-sm sm:text-lg px-6 py-3 bg-blue-400 hover:bg-purple-500 z-[20]'
+                      className='mt-10 md:ml-24 text-sm sm:text-lg px-6 py-3 font-medium bg-[#5488c4] hover:bg-[#3e6491] z-[20]'
                       initial={{ 
                         opacity: 0,
                         y : id % 2 === 1 ? -100 : 0,
@@ -135,7 +135,7 @@ const Hero = () => {
                         duration: 0.8
                       }}
                     >
-                      Learn More
+                      Coba Sekarang
                     </motion.button>
                   </Link>
                 </div>

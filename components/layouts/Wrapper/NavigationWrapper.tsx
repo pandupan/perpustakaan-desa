@@ -8,7 +8,7 @@ import Footer from '../Footer';
 
 const Index = ( { children }: { children: React.ReactNode} ) => {
   const pathname = usePathname()
-  const withOutNav = ['/dashboard','/login','/register','/dashboard/create','/dashboard/profile']
+  const withOutNav = ['/dashboard','/login','/register','/dashboard/create','/dashboard/profile', '/dashboard/data-buku', '/dashboard/data-peminjaman']
 
   return (
     <SessionProvider>
