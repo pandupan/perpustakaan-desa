@@ -17,11 +17,11 @@ const HeroTK = () => {
   };
 
   return (
-    <div className="relative px-10 h-[400px] bg-white" style={backgroundImageStyle}>
+    <div className="relative px-4 sm:px-6 md:px-8 lg:px-10 h-[300px] sm:h-[400px] bg-white" style={backgroundImageStyle}>
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="container">
-          <h1 className="text-5xl font-bold text-white">Perpustakaan Desa</h1>
-          <h2 className="text-2xl font-semibold text-white">Website Perpustakaan</h2>
+        <div className="container text-center sm:text-start">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-bold text-white">Perpustakaan Desa</h1>
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white">Website Perpustakaan</h2>
         </div>
       </div>
     </div>

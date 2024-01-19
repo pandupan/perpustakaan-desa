@@ -12,8 +12,8 @@ const Profile = () => {
     <>
 
       <div className="overflow-hidden border bg-white">
-        <div className="relative z-20 h-35 md:h-65 bg-[#5488c4] px-20 flex items-center">
-          <h1 className="text-6xl font-bold text-white">
+        <div className="relative z-20 h-35 md:h-65 bg-[#5488c4] sm:px-20 flex items-center">
+          <h1 className="sm:text-6xl text-4xl font-bold text-white">
             Profile Pengguna
           </h1>
           <div className="absolute bottom-1 right-1 z-10 xsm:bottom-4 xsm:right-4">
