@@ -65,15 +65,21 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <Link href="/">
-          <Image
-            width={176}
-            height={32}
-            src={"/images/logo/logo.svg"}
-            alt="Logo"
-          />
+        <Link href="/" className="my-auto flex-row flex gap-4">
+          <div className="relative  w-[50px] h-[50px]">
+            <Image
+              src="/images/logo/logo.png"
+              alt="logo"
+              fill={true}
+              className="object-cover w-[50px] h-[50px]"
+            />
+          </div>
+          <div className="flex flex-col">
+            <h1 className="font-black text-xl text-[#fff]">
+              Perpustakaan Desa
+            </h1>
+          </div>
         </Link>
-
         <button
           ref={trigger}
           onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -264,8 +270,8 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
             </h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
-                            {/* <!-- Menu Item Profile --> */}
-                            <li>
+              {/* <!-- Menu Item Profile --> */}
+              <li>
                 <Link
                   href="/profile"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
@@ -293,7 +299,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </Link>
               </li>
               {/* <!-- Menu Item Profile --> */}
-              
+
               {/* <!-- Menu Logout --> */}
               <li>
                 <button onClick={() => signOut()}>
@@ -336,7 +342,6 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 </button>
               </li>
               {/* <!-- Menu Logout --> */}
-
             </ul>
           </div>
         </nav>
