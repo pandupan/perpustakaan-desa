@@ -39,7 +39,7 @@ const TentangKami = () => {
                   omnis aut facilis maxime architecto doloribus nulla.
                 </p>
               </div>
-              <div id="#kontak"className="flex flex-col gap-2">
+              <div className="flex flex-col gap-2">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5488c4]">Kontak</h1> {/* Adjusted font size for responsiveness */}
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit.
