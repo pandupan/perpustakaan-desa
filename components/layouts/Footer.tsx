@@ -133,9 +133,7 @@ const Footer = () => {
             Aturan & Kebijakan Penggunaan
           </h1>
           <p className="xl:w-[804px] sm:w-[600px] text-xs sm:text-sm xl:text-base text-white font-light">
-            Dengan mengakses aplikasi sehat bersama anda patuh dengan aturan
-            yang berkaitan privasi keamanan data sesuai dengan kebijakan yang
-            berlaku.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt animi soluta ratione cupiditate aperiam quibusdam cumque modi hic doloremque eaque placeat laboriosam earum, perferendis porro. Ex est veritatis voluptate incidunt.
           </p>
         </div>
       </div>

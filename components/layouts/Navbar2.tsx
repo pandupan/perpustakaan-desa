@@ -32,7 +32,7 @@ const Navbar2 = () => {
           </Link>
           {data ? (
             <Link
-              href="/dashboard"
+              href="/dashboard/data-buku"
               className=" font-bold sm:p-2 text-[#1a1668] hover:text-[#5488c4] my-auto text-xs sm:text-normal"
             >
               Admin Dashboard
@@ -46,7 +46,7 @@ const Navbar2 = () => {
           </Link>
           <div className="my-auto sm:ml-auto hidden sm:flex">
             <Link
-              href="kontak"
+              href="/tentang-kami"
               title="/tentang-kami"
               className=" text-xs sm:text-normal sm:py-4 sm:px-8 p-1 text-center bg-[#5488c4] text-white w-full rounded-md sm:font-bold hover:bg-[#3e6491] ease-in-out duration-300"
             >
